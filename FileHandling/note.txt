@@ -1,0 +1,53 @@
+there are 2 ways of opening and closing files:
+1. Using the open() and close() tags 
+2. using the 'with open' phrase
+# the 'with open' phrase opens the file for use and closes it when the code is done instead of manually closing the file
+#the open() and close() tags allow the programmer to manually open and close the file
+
+1. USING THE open() and close() tags to implement readline() and readlines
+#readline()
+#open the file for reading
+f1 = open('menu.txt')
+
+#read line by line
+ln = f1.readline()#read each line line by line but the readlines() reads all the lines in the file
+while ln != '':
+print(ln)
+ln = f1.readline()
+
+#close the file
+f1.close()
+
+b.
+#readlines()
+#open the file for reading
+f1 = open('menu.txt')
+
+#read line and stores them in a list
+for ln in f1.readlines():
+print(ln)
+
+#close the file
+f1.close()
+
+
+
+
+2.using the 'with open' phrase
+#you may start by defining the function or by going straight to open the file
+def read_names():
+with open('menu.txt', mode = 'r')as my_file:
+	for i in my_file:
+		print(i)
+read_names()
+#incase there is an extra space from the saving of the file in the notepad, you asign rstrip('\n') to the file ==i.rstrip('\n')
+
+
+b. #with open and writing files
+#define and open the file
+def write_file(file_name):
+	with open('file name', mode = 'w') as my_file:
+	cars = ['Saloon','Hatch','Estate']
+		for car in cars:
+			my_file.write(car + '\n')
+write_file('file name') 
